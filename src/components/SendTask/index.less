@@ -1,0 +1,100 @@
+.send-task {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  .placeholder{
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+  .hidden{
+    visibility: hidden;
+  }
+  .title {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  .subtitle {
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: #2d3748;
+    margin-top:8px;
+    white-space: pre-wrap;
+  }
+  .border-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 12px;
+    height: 1px;
+    background-color: #a6a6a6;
+  }
+  .caret {
+    position: absolute;
+    top: -4px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-left-color: #a6a6a6;
+    transform: translateX(4px);
+  }
+  .histogram {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 8px;
+    background-color: #a6a6a6;
+  }
+  .txt-pending {
+    color: #0052d9;
+  }
+  .txt-success {
+    color: #2ba471;
+  }
+  .txt-error {
+    color: #d54941;
+  }
+  .cart-border-initial {
+    border-left-color: #a6a6a6;
+  }
+  .cart-border-pending {
+    border-left-color: #0052d9;
+  }
+  .cart-border-success {
+    border-left-color: #2ba471;
+  }
+  .cart-border-error {
+    border-left-color: #d54941;
+  }
+  .line-bg-success{
+    background-color: #2ba471;
+  }
+  .line-bg-pending{
+    background-color: #0052d9;
+  }
+  .line-bg-error{
+    background-color: #d54941;
+  }
+}
+.bg-initial {
+  background-color: #F3F3F3;
+}
+.bg-pending {
+  background-color: #F2F3FF;
+}
+.bg-success {
+  background-color: #E3F9E9;
+}
+.bg-error {
+  background-color: #FFF0ED;
+}
