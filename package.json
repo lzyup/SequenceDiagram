@@ -1,8 +1,9 @@
 {
-  "name": "sequencediagram",
-  "private": true,
+  "name": "@luzyup/sequence-diagram",
   "version": "0.0.1",
   "type": "module",
+  "main": "./lib/index.umd.cjs",
+  "module": "./lib/index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -27,6 +28,7 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "less": "^4.2.0",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1"
   }
 }

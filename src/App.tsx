@@ -1,7 +1,8 @@
 import { useSetState } from 'ahooks';
 
-import { SequenceDiagrams } from './components';
-import { ITaskItem, TaskType, TaskStatus, IRoleItem } from './components/type';
+import {Space,Button } from 'antd'
+import { SequenceDiagrams } from './index';
+import { ITaskItem, TaskType, TaskStatus, IRoleItem } from './index';
 
 import './App.less';
 
@@ -39,15 +40,6 @@ function App() {
         taskSeq: 3,
         depTasks: [1, 2],
       },
-      // {
-      //   title: '3.业务询价接口(业务定价)',
-      //   subTitle: 'getPrice查询费用用于冻结；返回费用$cost不适用计费折扣',
-      //   type: TaskType.SendAndBack,
-      //   status: TaskStatus.Optional,
-      //   from: 3,
-      //   to: 4,
-      //   taskSeq: 4,
-      // },
       {
         title: '4.调用开通参数检查接口',
         subTitle: 'checkCreate 检查是否符合开通条件',
@@ -109,6 +101,38 @@ function App() {
     { roleName: '计费后台', roleSeq: 3 },
     { roleName: '业务后台', roleSeq: 4 },
   ];
+
+  const start = (type: TaskStatus) => { 
+    switch (type) {
+      case TaskStatus.Pending:
+        state.taskList[0].status = TaskStatus.Pending;
+        state.taskList[1].status = TaskStatus.Pending;
+        state.taskList[3].status = TaskStatus.Pending;
+        state.taskList[6].status = TaskStatus.Pending;
+        state.taskList[8].status = TaskStatus.Pending;
+        break;
+      case TaskStatus.Success:
+        state.taskList[0].status = TaskStatus.Success;
+        state.taskList[1].status = TaskStatus.Success;
+        state.taskList[3].status = TaskStatus.Success;
+        state.taskList[6].status = TaskStatus.Success;
+        state.taskList[8].status = TaskStatus.Success;
+        break;
+      case TaskStatus.Error:
+        state.taskList[0].status = TaskStatus.Error;
+        state.taskList[1].status = TaskStatus.Error;
+        state.taskList[3].status = TaskStatus.Error;
+        state.taskList[6].status = TaskStatus.Error;
+        state.taskList[8].status = TaskStatus.Error;
+        break;
+      default:
+        break;
+    }
+    setState({
+      taskList: state.taskList,
+    })
+
+  }
   return (
     <>
       <div className="example-box">
@@ -118,6 +142,7 @@ function App() {
           roleList={roleList}
           taskList={state.taskList}
         ></SequenceDiagrams>
+        <Space style={{ marginTop: 100 }}><Button onClick={() => start(TaskStatus.Pending)}>开始pending</Button><Button onClick={() => start(TaskStatus.Success)}>展示success终态</Button><Button onClick={() => start(TaskStatus.Error)}>展示error终态</Button></Space>
       </div>
     </>
   );

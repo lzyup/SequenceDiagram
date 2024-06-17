@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect, useMemo } from 'react';
+import { FC, useLayoutEffect, useMemo } from 'react';
 import { Space } from 'antd';
 import { useSetState } from 'ahooks';
 import { ITaskItem, IRoleItem, TaskType } from './type';
