@@ -53,7 +53,7 @@ import { ITaskItem, TaskType, TaskStatus, IRoleItem } from '@luzyup/sequence-dia
 import '@luzyup/sequence-diagram/lib/style.css'
 
 
-const taskList = [
+const taskList: ITaskItem[] = [
       {
         title: '1.任务标题哈哈哈啊哈哈',
         subTitle: '任务副标题1',
@@ -136,9 +136,34 @@ const taskList = [
       },
     ],
 
+ const roleList: IRoleItem[] = [
+    { roleName: '用户', roleSeq: 1 },
+    { roleName: '业务前台', roleSeq: 2 },
+    { roleName: '中台', roleSeq: 3 },
+    { roleName: '后台', roleSeq: 4 },
+  ];
+
     return (<SequenceDiagrams
           taskGap={8}
           roleList={roleList}
           taskList={state.taskList}
         ></SequenceDiagrams>)
 ```
+
+# 2、效果图
+
+### 初始
+
+![效果图](https://github.com/lzyup/SequenceDiagram/blob/47d048a/pics/init.png?raw=true)
+
+### 进行中
+
+![效果图](https://github.com/lzyup/SequenceDiagram/blob/47d048a/pics/pending.png?raw=true)
+
+### 成功
+
+![效果图](https://github.com/lzyup/SequenceDiagram/blob/47d048a/pics/success.png?raw=true)
+
+### 失败
+
+![效果图](https://raw.githubusercontent.com/lzyup/SequenceDiagram/47d048aa9fe88fb5e55e945bedb5cb34dfaa1155/pics/error.png)

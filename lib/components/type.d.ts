@@ -25,8 +25,7 @@ export declare enum TaskStatus {
 export declare enum TaskType {
     Send = "send",
     SendSelf = "sendSelf",
-    SendAndBack = "sendAndBack",
-    Back = "back"
+    SendAndBack = "sendAndBack"
 }
 export declare enum ResultTipsType {
     Pending = "pending",
