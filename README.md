@@ -150,7 +150,7 @@ const taskList: ITaskItem[] = [
         ></SequenceDiagrams>)
 ```
 
-# 2、效果图
+# 3、效果图
 
 ### 初始
 
