@@ -3,7 +3,10 @@
   display: flex;
   flex-direction: column;
   padding: 8px 12px;
-
+  .title-wrapper{
+    display: flex;
+    align-items: center;
+  }
   .title {
     font-family: 'PingFang SC';
     font-style: normal;
@@ -23,7 +26,14 @@
     margin-top: 8px;
     white-space: pre-wrap;
   }
-
+  .placeholder{
+    display: block;
+    width: 14px;
+    height: 14px;
+  }
+  .hidden{
+    visibility: hidden;
+  }
   .border-line {
     position: absolute;
     top: 0;

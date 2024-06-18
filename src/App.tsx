@@ -14,17 +14,17 @@ function App() {
   const [state, setState] = useSetState<IState>({
     taskList: [
       {
-        title: '1.开通',
-        subTitle: '用户执行开通操作',
+        title: '1.任务标题哈哈哈啊哈哈',
+        subTitle: '任务副标题1',
         type: TaskType.Send,
         from: 1,
         to: 2,
         taskSeq: 1,
       },
       {
-        title: '2.调用开通接口',
-        subTitle: 'qcloud.Hour.create 或业务前台调用业务后台再调用计费后台',
-        type: TaskType.Send,
+        title: '2.任务标题',
+        subTitle: '任务副标题2',
+        type: TaskType.SendAndBack,
         status: TaskStatus.Initial,
         from: 2,
         to: 3,
@@ -32,8 +32,8 @@ function App() {
         depTasks: [1],
       },
       {
-        title: '3.询价和折扣（计费定价）',
-        subTitle: '算出费用$cost用于冻结',
+        title: '3.任务标题',
+        subTitle: '任务副标题3',
         type: TaskType.SendSelf,
         from: 3,
         to: 4,
@@ -41,8 +41,8 @@ function App() {
         depTasks: [1, 2],
       },
       {
-        title: '4.调用开通参数检查接口',
-        subTitle: 'checkCreate 检查是否符合开通条件',
+        title: '4.任务标题4',
+        subTitle: '任务副标题4',
         type: TaskType.Send,
         status: TaskStatus.Initial,
         from: 3,
@@ -50,16 +50,16 @@ function App() {
         taskSeq: 4,
       },
       {
-        title: '5.校验余额',
-        subTitle: '校验余额是否大于$cost；大客户不需要校验，不需要冻结$cost=0',
+        title: '5.任务标题5',
+        subTitle: '任务副标题5',
         type: TaskType.SendSelf,
         from: 3,
         to: 4,
         taskSeq: 5,
       },
       {
-        title: '6.冻结(可选)',
-        subTitle: '冻结金额=$cost*冻结系数大客户不需要冻结',
+        title: '6.任务标题6',
+        subTitle: '任务副标题6',
         type: TaskType.SendSelf,
         status: TaskStatus.Optional,
         from: 3,
@@ -67,8 +67,8 @@ function App() {
         taskSeq: 6,
       },
       {
-        title: '7.调用发货接口',
-        subTitle: 'createResource执行发货',
+        title: '7.任务标题7',
+        subTitle: '任务副标题7',
         type: TaskType.Send,
         status: TaskStatus.Initial,
         from: 3,
@@ -76,8 +76,8 @@ function App() {
         taskSeq: 7,
       },
       {
-        title: '8.判断是否为异步',
-        subTitle: '若返回flowid,则判断为异步查询，否则判断为同步，结束流程',
+        title: '8.任务标题8',
+        subTitle: '任务标题8',
         type: TaskType.SendSelf,
         status: TaskStatus.Optional,
         from: 3,
@@ -85,8 +85,8 @@ function App() {
         taskSeq: 8,
       },
       {
-        title: '9.查询异步发货结果',
-        subTitle: '轮询调用queryflow',
+        title: '9.任务标题9',
+        subTitle: '任务标题9',
         type: TaskType.Send,
         status: TaskStatus.Initial,
         from: 3,
@@ -98,8 +98,8 @@ function App() {
   const roleList: IRoleItem[] = [
     { roleName: '用户', roleSeq: 1 },
     { roleName: '业务前台', roleSeq: 2 },
-    { roleName: '计费后台', roleSeq: 3 },
-    { roleName: '业务后台', roleSeq: 4 },
+    { roleName: '中台', roleSeq: 3 },
+    { roleName: '后台', roleSeq: 4 },
   ];
 
   const start = (type: TaskStatus) => { 

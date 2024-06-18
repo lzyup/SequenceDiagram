@@ -108,7 +108,6 @@ export const SequenceDiagrams: FC<ISequenceDiagrams> = ({ roleList, taskList, ta
     <div
       id="sequence-diagrams"
       className="sequence-diagrams-2ad5122f-c389-48c5-b8c5-8d870e5100aa"
-      // style={{ gridTemplateColumns: `repeat(${roleList.length * 2}, 1fr)` }}
       style={{ gridTemplateColumns, gridTemplateRows: 'auto' }}
     >
       {state.calRoleList.map((roleItem: IRoleItem) => {
@@ -165,7 +164,6 @@ const TaskMap: Record<TaskType, any> = {
   [TaskType.Send]: SendTask,
   [TaskType.SendSelf]: SendSelfTask,
   [TaskType.SendAndBack]: SendAndBackTask,
-  [TaskType.Back]: SendTask,
 };
 
 const DivideHeight = 20;
