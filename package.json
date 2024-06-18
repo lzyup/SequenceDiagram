@@ -1,6 +1,6 @@
 {
   "name": "@luzyup/sequence-diagram",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "type": "module",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.umd.cjs",
