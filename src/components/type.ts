@@ -29,7 +29,6 @@ export enum TaskType {
   Send = 'send',
   SendSelf = 'sendSelf',
   SendAndBack = 'sendAndBack',
-  Back = 'back',
 }
 
 export enum ResultTipsType {

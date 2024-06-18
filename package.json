@@ -2,6 +2,7 @@
   "name": "@luzyup/sequence-diagram",
   "version": "1.0.0",
   "type": "module",
+  "types": "./lib/index.d.ts",
   "main": "./lib/index.umd.cjs",
   "module": "./lib/index.js",
   "scripts": {
